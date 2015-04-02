@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Operaciones entre Conjuntos</title>
+
+		<meta name="description" content="Operations between Sets">
+		<meta name="author" content="Javier Guaje">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/dark-blue.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                
+<section data-markdown>
+	# Operaciones entre Conjuntos
+	#####Javier Guaje
+</section>
+<section data-markdown>
+	# Operaciones
+</section>
+<section>
+	<section data-markdown>
+		## Unión
+	</section>
+
+	<section>
+		<h2>Unión: Definición</h2>
+
+		<p>
+			Sean \(A\) y \(B\) dos conjuntos, el conjunto <b>unión</b> de \(A\) y \(B\) es el formado con los elementos que están en \(A\) o están en \(B\). El conjunto unión es único, se nota \(A \cup B\) y se define formalmente mediante el siguiente predicado:
+			<br>
+			$$\phi_{A \cup B} (x) \Leftrightarrow x \in (A \cup B) := (x \in A) \lor (x \in B)$$
+		</p>
+
+		<p class="fragment">
+			Utilizando notación por comprensión
+			<br>
+			$$A \cup B = \{x : (x \in A) \lor (x \in B)\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Unión: Ejemplo</h2>
+
+		<p>
+			Sean \(A = \{'R', 'Q', 'D'\}\) y \(B = \{'O', 'U', 'I', 'E', 'A'\}\). El diagrama de Venn que representa el conjunto \(A \cup B = \{'R', 'Q', 'D', 'O', 'U', 'I', 'E', 'A'\}\) es:
+		</p>
+	</section>
+
+	<section>
+		<h2>Unión: Ejemplo</h2>
+
+		<p>
+			Sean \(A = \{'O', R', 'Q', 'U', 'I', 'D', 'E', 'A'\}\) y \(B = \{'E', 'U', 'L', 'A', 'L', 'I', 'O'\}\). El diagrama de Venn que representa el conjunto \(A \cup B = \{'A', 'E', 'I', 'O', 'U', 'R', 'Q', 'D', 'L'\}\) es:
+		</p>
+	</section>
+
+	<section>
+		<h2>Unión: Propiedades</h2>
+
+		<p>
+			Sean \(A\), \(B\) y \(C\) conjuntos.
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \cup B = B \cup A\)
+					</td>
+					<td>Conmutativa</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\((A \cup B) \cup C = A \cup (B \cup C)\)
+					</td>
+					<td>Asociativa</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \subseteq A \cup B\)
+						<br>
+						\(B \subseteq A \cup B\)
+					</td>
+					<td style="vertical-align:middle">Absorción</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \cup \emptyset = A\)
+					</td>
+					<td>Identidad</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \cup A = A\)
+					</td>
+					<td>Idempotencia</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	
+	<section>
+		<h2>Unión: Propiedades</h2>
+
+		<p>
+			Sean \(A\), \(B\) y \(C\) conjuntos.
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \subseteq B \Leftrightarrow A \cup B = B\)
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Intersección
+	</section>
+
+	<section>
+		<h2>Intersección: Definición</h2>
+
+		<p>
+			Sean \(A\) y \(B\) dos conjuntos, el conjunto <b>intersección</b> de \(A\) y \(B\) es el formado con los elementos que están en \(A\) y están en \(B\). El conjunto intersección es único, se nota \(A \cap B\) y se define formalmente mediante el siguiente predicado:
+			<br>
+			$$\phi_{A \cap B} (x) \Leftrightarrow x \in (A \cap B) := (x \in A) \land (x \in B)$$
+		</p>
+
+		<p class="fragment">
+			Utilizando notación por comprensión
+			<br>
+			$$A \cap B = \{x : (x \in A) \land (x \in B)\}$$
+		</p>
+
+		<p class="fragment">
+			Si \(A \cap B = \emptyset\) se dice que los conjuntos \(A\) y \(B\) son <b>disyuntos</b> o <b>disjuntos</b>.
+		</p>
+	</section>
+
+	<section>
+		<h2>Intersección: Ejemplo</h2>
+
+		<p>
+			Sean \(A = \{\color{blue}{2\heartsuit}, \color{black}{2\spadesuit}, \color{black}{7\spadesuit}, \color{blue}{7\diamondsuit}, \color{blue}{7\heartsuit}\}\) y \(B = \{\color{black}{5\clubsuit}, \color{black}{6\clubsuit}, \color{black}{7\clubsuit}, \color{black}{8\clubsuit}, \color{black}{9\clubsuit}\}\). Si realizamos la intersección usando los números, entonces tenemos \(A \cap B = \{ 7 \}\). Cuya representación mediante diagramas de Venn es la siguiente:
+		</p>
+	</section>
+
+	<section>
+		<h2>Intersección: Ejemplo</h2>
+
+		<p>
+			Sean \(A = \{\color{black}{A\clubsuit}, \color{black}{A\spadesuit}, \color{black}{10\clubsuit}, \color{blue}{10\diamondsuit}, \color{blue}{10\heartsuit}\}\), \(B = \{\color{black}{10\spadesuit}, \color{black}{J\clubsuit}, \color{blue}{Q\diamondsuit}, \color{black}{K\clubsuit}, \color{blue}{A\diamondsuit}\}\) y \(C = \{\color{blue}{2\heartsuit}, \color{blue}{3\heartsuit}, \color{blue}{Q\heartsuit}, \color{blue}{K\heartsuit}, \color{blue}{A\heartsuit}\}\). Si realizamos la intersección usando los números y letras, entonces tenemos \(A \cap B \cap C = \{ A \}\).  Cuya representación mediante diagramas de Venn es la siguiente:
+		</p>
+	</section>
+
+	<section>
+		<h2>Intersección: Propiedades</h2>
+
+		<p>
+			Sean \(A\), \(B\) y \(C\) conjuntos.
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \cap B = B \cap A\)
+					</td>
+					<td>Conmutativa</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\((A \cap B) \cap C = A \cap (B \cup C)\)
+					</td>
+					<td>Asociativa</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \cap B \subseteq A\)
+						<br>
+						\(A \cap B \subseteq B\)
+					</td>
+					<td style="vertical-align:middle">Absorción</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \cap \emptyset = \emptyset\)
+					</td>
+					<td>Dominación</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \cap A = A\)
+					</td>
+					<td>Idempotencia</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Intersección: Propiedades</h2>
+
+		<p>
+			Sean \(A\), \(B\) y \(C\) conjuntos.
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \subseteq B \Leftrightarrow A \cap B = A\)
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Unión e Intersección: Propiedades</h2>
+
+		<p>
+			Sean \(A\), \(B\) y \(C\) conjuntos.
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)
+						<br>
+						\(A \cup (B \cap C) = (A \cup B)\cap (A \cup C)\)
+					</td>
+					<td style="vertical-align:middle">Distributiva</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Complemento
+	</section>
+
+	<section>
+		<h2>Complemento: Definición</h2>
+
+		<p>
+			Sea \(A\) un conjunto y \(U\) un universo para \(A\), el conjunto <b>complemento</b> de \(A\) es el formado con los elementos que están en \(U\) y no están en \(A\). El conjunto complemento no es único ya que depende del universo con respecto al cual se haga la operación. El conjunto complemento se nota \(\bar A\) y se define formalmente mediante el siguiente predicado:
+			<br>
+			$$\phi_\bar A (x) \Leftrightarrow x \in (\bar A) := (x \in U) \land (x \notin A)$$
+		</p>
+
+		<p class="fragment">
+			Utilizando notación por comprensión
+			<br>
+			$$\bar A = \{x : (x \in U) \land (x \notin A)\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Complemento: Ejemplo</h2>
+
+		<p>
+			Sean \(U = \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}\) y \(A = \{1, 3, 5, 7, 9\}\). El diagrama de Venn que representa el conjunto \(\bar A = \{0, 2, 4, 6, 8\}\) es:
+		</p>
+	</section>
+
+	<section>
+		<h2>Complemento: Ejemplo</h2>
+
+		<p>
+			Sean \(U = \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}\), \(A = \{1, 3, 5, 7, 9\}\) y \(B = \{2, 3, 5, 7\}\). El diagrama de Venn que representa el conjunto \(\bar A = \{0, 2, 4, 6, 8\}\) es:
+		</p>
+	</section>
+
+	<section>
+		<h2>Complemento: Propiedades</h2>
+
+		<p>
+			Sean \(A\) y \(B\) conjuntos, \(U\) un universo para \(A\) y \(B\).
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \cup \bar A = U\)
+					</td>
+					<td>Completación</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \cap \bar A = \emptyset\)
+					</td>
+					<td>Nilpotencia</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(\bar {\bar A} = A\)
+					</td>
+					<td>Idempotencia</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(\overline {(A \cap B)} = \bar A \cup \bar B\)
+						<br>
+						\(\overline {(A \cup B)} = \bar A \cap \bar B\)
+					</td>
+					<td style="vertical-align:middle">De Morgan</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Complemento: Propiedades</h2>
+
+		<p>
+			Sean \(A\) y \(B\) conjuntos, \(U\) un universo para \(A\) y \(B\).
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(\bar U = \emptyset\)
+						<br>
+						\(\bar \emptyset = U\)
+					</td>
+					<td></td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \subseteq B \Leftrightarrow \bar B \subseteq \bar A\)
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Diferencia
+	</section>
+
+	<section>
+		<h2>Diferencia: Definición</h2>
+
+		<p>
+			Sean \(A\) y \(B\) dos conjuntos, el conjunto <b>diferencia</b> de \(A\) y \(B\) es el formado con los elementos que están en \(A\) y no están en \(B\). El conjunto diferencia es único, se nota \(A \setminus B\) y se define formalmente mediante el siguiente predicado:
+			<br>
+			$$\phi_{A \setminus B} (x) \Leftrightarrow x \in (A \setminus B) := (x \in A) \land (x \notin B)$$
+		</p>
+
+		<p class="fragment">
+			Utilizando notación por comprensión
+			<br>
+			$$A \setminus B = \{x : (x \in A) \land (x \notin B)\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Diferencia: Ejemplo</h2>
+
+		<p>
+			Sean \(A = \{\color{yellow}{\blacksquare}, \color{blue}{\blacksquare}, \color{red}{\blacksquare}\}\) y \(B = \{\color{green}{\blacksquare}, \color{yellow}{\blacksquare}, \color{black}{\blacksquare}\}\). El diagrama de Venn que representa el conjunto \(A \setminus B = \{\color{blue}{\blacksquare}, \color{red}{\blacksquare}\}\) es:
+		</p>
+	</section>
+
+	<section>
+		<h2>Diferencia: Ejemplo</h2>
+
+		<p>
+			Sean \(A = \{1, 2, 3, 4, 5\}\) y \(B = \{1, 2, 3\}\). El diagrama de Venn que representa el conjunto \(A \setminus B = \{4, 5\}\) es:
+		</p>
+	</section>
+
+	<section>
+		<h2>Diferencia: Propiedades</h2>
+
+		<p>
+			Sean \(A\) y \(B\) conjuntos, \(U\) un universo para \(A\) y \(B\).
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \setminus \emptyset = A\)
+					</td>
+					<td>Identidad</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \setminus A = \emptyset\)
+					</td>
+					<td>Nilpotencia</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \setminus B \neq B \setminus A\)
+					</td>
+					<td>No conmutatividad</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	
+	<section>
+		<h2>Diferencia: Propiedades</h2>
+
+		<p>
+			Sean \(A\) y \(B\) conjuntos, \(U\) un universo para \(A\) y \(B\).
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \setminus B = A \cap \bar B\)
+					</td>
+					<td></td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(U \setminus A = \bar A\)
+						<br>
+						\(U \setminus \bar A = A\)
+					</td>
+					<td></td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \setminus B = \emptyset \Leftrightarrow A \subseteq B\)
+					</td>
+					<td></td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \setminus B = A \Leftrightarrow A \cap B = \emptyset\)
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Diferencia simétrica
+	</section>
+
+	<section>
+		<h2>Diferencia simétrica: Definición</h2>
+
+		<p>
+			Sean \(A\) y \(B\) dos conjuntos, el conjunto <i>diferencia simétrica</i> de \(A\) y \(B\) es el formado con los elementos que están en \(A\) o \(B\) pero no en ambos. El conjunto diferencia simétrica es único, se nota \(A \triangle B\) y se define formalmente mediante el siguiente predicado:
+			<br>
+			$$\phi_{A \triangle B} (x) \Leftrightarrow x \in (A \triangle B) := x \in ((A \cup B) \setminus (A \cap B))$$
+		</p>
+
+		<p class="fragment">
+			Utilizando notación por comprensión
+			<br>
+			$$A \triangle B = \{x : x \in ((A \cup B) \setminus (A \cap B))\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Diferencia simétrica: Ejemplo</h2>
+
+		<p>
+			Sean \(A = \{\color{yellow}{\blacksquare}, \color{blue}{\blacksquare}, \color{red}{\blacksquare}\}\) y \(B = \{\color{green}{\blacksquare}, \color{yellow}{\blacksquare}, \color{blue}{\blacksquare}\}\). El diagrama de Venn que representa el conjunto \(A \triangle B = \{\color{red}{\blacksquare}, \color{green}{\blacksquare}\}\) es:
+		</p>
+	</section>
+
+	<section>
+		<h2>Diferencia simétrica: Ejemplo</h2>
+
+		<p>
+			Sean \(A = \{2, 3\}\) y \(B = \{3, 4\}\). El diagrama de Venn que representa el conjunto \(A \triangle B = \{2, 4\}\) es:
+		</p>
+	</section>
+
+	<section>
+		<h2>Diferencia simétrica: Propiedades</h2>
+
+		<p>
+			Sean \(A\), \(B\) y \(C\) conjuntos, \(U\) un universo para \(A\), \(B\) y \(C\).
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \triangle B = B \triangle A\)
+					</td>
+					<td>Conmutativa</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\((A \triangle B) \triangle C = A \triangle (B \triangle C)\)
+					</td>
+					<td>Asociativa</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \triangle A = \emptyset\)
+					</td>
+					<td>Nilpotencia</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \triangle \emptyset = A\)
+					</td>
+					<td>Identidad</td>
+				</tr>
+				<tr class="fragment">
+					<td style="text-align:center">
+						\(A \cap (B \triangle C) = (A \cap B) \triangle (A \cap C)\)
+					</td>
+					<td>Distributiva</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Diferencia simétrica: Propiedades</h2>
+
+		<p>
+			Sean \(A\), \(B\) y \(C\) conjuntos, \(U\) un universo para \(A\), \(B\) y \(C\).
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">Propiedad</th>
+					<th style="text-align:center">Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						\(A \triangle B = (A \setminus B) \cup (B \setminus A)\)
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Conjunto de partes
+	</section>
+
+	<section>
+		<h2>Conjunto de partes: Definición</h2>
+
+		<p>
+			Sea \(A\) un conjunto, el conjunto <b>partes</b> (o <b>potencia</b> o <b>exponencial</b>) de \(A\) es el conjunto de todos los subconjuntos de \(A\). El conjunto de partes es único, se nota \(\wp (A)\) y se define formalmente mediante el siguiente predicado:
+			<br>
+			$$\phi_{\wp (A)} (X) \Leftrightarrow X \in (\wp (A)) := (X \subseteq A)$$
+		</p>
+
+		<p class="fragment">
+			Utilizando notación por comprensión
+			<br>
+			$$\wp (A) = \{X : X \subseteq A\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Conjunto de partes: Ejemplo</h2>
+
+		<p>
+			Para el conjunto \(A = \{"Cara", "Sello"\}\) se tiene que:
+		</p>
+
+		<p class="fragment">
+			$$\wp (A) = \{\emptyset, \{"Cara"\}, \{"Sello"\}, \{"Cara", "Sello"\}\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Conjunto de partes: Ejemplo</h2>
+
+		<p>
+			Para el conjunto \(A = \{1, 2, 3\}\) se tiene que:
+		</p>
+
+		<p class="fragment">
+			$$\wp (A) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\}\}$$
+		</p>
+	</section>
+</section>
+<section data-markdown>
+	# Producto cartesiano
+</section>
+<section>
+	<section data-markdown>
+		## Par ordenado
+	</section>
+
+	<section>
+		<h2>Par ordenado: Definición</h2>
+
+		<p>
+			Para todo par de objetos \(a\) y \(b\) existe un único objeto llamado <b>par ordenado</b> de \(a\) con \(b\) y notado \((a, b)\), que se define como:
+			<br>
+			$$(a, b) = \{\{a\}, \{a, b\}\}$$
+		</p>
+
+		<p class="fragment">
+			Al objeto \(a\) se le llama la primera componente del par ordenado, y al objeto \(b\) se le llama la segunda componente del par ordenado.
+		</p>
+	</section>
+
+	<section>
+		<h2>Par ordenado: Igualdad</h2>
+
+		<p>
+			La igualdad entre pares ordenados se establece a través de la siguiente equivalencia lógica:
+			<br>
+			$$((a, b) = (c, d)) \Leftrightarrow ((a = c) \land (b = d))$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Par ordenado: Desigualdad</h2>
+
+		<p>
+			Sean \(a\) y \(b\) dos objetos, se tiene que si \(a \neq b\), entonces los pares ordenados \((a, b)\) y \((b, a)\) no son iguales.
+		</p>
+	</section>
+
+	<section>
+		<h2>Par ordenado: Ejemplos</h2>
+
+		<ul>
+			<li>\((1, 0)\)</li>
+			<li class="fragment">\((0, 1)\)</li>
+			<li class="fragment">\((-3, 12)\)</li>
+			<li class="fragment">\((-3, -1)\)</li>
+			<li class="fragment">\((0.5, 4.8)\)</li>
+			<li class="fragment">\((-15.6, 2.7)\)</li>
+		</ul>						
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Producto cartesiano
+	</section>
+
+	<section>
+		<h2>Producto cartesiano: Definición</h2>
+
+		<p>
+			El conjunto <b>producto cartesiano</b> de dos conjuntos \(A\) y \(B\), es el conjunto de todas las parejas ordenadas, cuya primer componente es un elemento del conjunto \(A\) y cuya segunda componente es un elemento del conjunto \(B\). El conjunto producto cartesiano es único y se nota \(A \times B\). El conjunto producto cartesiano puede ser definido mediante el siguiente predicado:
+			<br>
+			$$\phi_{A \times B} ((x, y)) \Leftrightarrow (x, y) \in A \times B := (x \in A) \land (y \in B)$$
+		</p>
+
+		<p class="fragment">
+			Utilizando notación por comprensión
+			<br>
+			$$A \times B = \{(x, y) : (x \in A) \land (y \in B)\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Producto cartesiano: Ejemplo</h2>
+
+		<p>
+			Para los conjuntos \(A = \{"Cara", "Sello"\}\) y \(B = \{"COP", "USD"\}\) se tiene que:
+		</p>
+
+		<p class="fragment">
+			$$A \times B = \{("Cara", "COP")), ("Cara", "USD"), $$
+			$$("Sello", "COP"), ("Sello", "USD")\}$$
+			<br>
+			$$B \times A = \{("COP", "Cara")), ("COP", "Sello"), $$
+			$$("USD", "Cara"), ("USD", "Sello")\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Producto cartesiano: Ejemplo</h2>
+
+		<p>
+			Para los conjuntos \(A = \{J, Q, K\}\) y \(B = \{\color{blue}{\heartsuit}, \color{black}{\spadesuit}\}\) se tiene que:
+		</p>
+
+		<p class="fragment">
+			$$A \times B = \{(J, \color{blue}{\heartsuit}), (J, \color{black}{\spadesuit}), (Q, \color{blue}{\heartsuit}), (Q, \color{black}{\spadesuit}), (K, \color{blue}{\heartsuit}), (K, \color{black}{\spadesuit})\}$$
+			<br>
+			$$B \times A = \{(\color{blue}{\heartsuit}, J), (\color{blue}{\heartsuit}, Q), (\color{blue}{\heartsuit}, K), (\color{black}{\spadesuit}, J), (\color{black}{\spadesuit}, Q), (\color{black}{\spadesuit}, K)\}$$
+		</p>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Producto cartesiano generalizado
+	</section>
+
+	<section>
+		<h2>Producto cartesiano generalizado: Definición</h2>
+
+		<p>
+			Sean \(A_1, A_2, \dots , A_n\), \(n\) conjuntos, el producto cartesiano generalizado de dichos conjuntos esta definido por las \(n\)-tuplas ordenadas \((a_1, a_2, . . . , a_n)\) con \(a_i \in A_i, \forall i = 1, 2, 3, \dots, n\).
+		</p>
+
+		<p class="fragment">
+			Utilizando notación por comprensión
+			<br>
+			$$A_1 \times A_2 \times \dots \times A_n = $$
+			$$\{(a_1, a_2, . . . , a_n) : (a_i \in A_i), \forall i = 1, 2, 3, \dots, n\}$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Producto cartesiano generalizado: Ejemplo</h2>
+
+		<p>
+			Para los conjuntos \(A = \{V, F\}\), \(B = \{1, 0\}\) y \(C = \{\color{cyan}{\blacksquare}, \color{magenta}{\blacksquare}, \color{yellow}{\blacksquare}, \color{black}{\blacksquare}\}\) se tiene que:
+		</p>
+
+		<p class="fragment">
+			$$A \times B \times C = \{(V, 1, \color{cyan}{\blacksquare}), (V, 1, \color{magenta}{\blacksquare}), (V, 1, \color{yellow}{\blacksquare}), (V, 1, \color{black}{\blacksquare}), $$
+			$$(V, 0, \color{cyan}{\blacksquare}), (V, 0, \color{magenta}{\blacksquare}), (V, 0, \color{yellow}{\blacksquare}), (V, 0, \color{black}{\blacksquare}), $$
+			$$(F, 1, \color{cyan}{\blacksquare}), (F, 1, \color{magenta}{\blacksquare}), (F, 1, \color{yellow}{\blacksquare}), (F, 1, \color{black}{\blacksquare}), $$
+			$$(F, 0, \color{cyan}{\blacksquare}), (F, 0, \color{magenta}{\blacksquare}), (F, 0, \color{yellow}{\blacksquare}), (F, 0, \color{black}{\blacksquare})\}$$
+		</p>
+	</section>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: false,
+
+				// Display the page number of the current slide
+				slideNumber: true,
+
+				// Push each slide change to the browser history
+				history: true,
+
+				// Enable keyboard shortcuts for navigation
+				keyboard: true,
+
+				// Enable the slide overview mode
+				overview: true,
+
+				// Vertical centering of slides
+				center: true,
+
+				// Enables touch navigation on devices with touch input
+				touch: true,
+
+				// Loop the presentation
+				loop: false,
+
+				// Change the presentation direction to be RTL
+				rtl: false,
+
+				// Turns fragments on and off globally
+				fragments: true,
+
+				// Flags if the presentation is running in an embedded mode,
+				// i.e. contained within a limited portion of the screen
+				embedded: false,
+
+				// Flags if we should show a help overlay when the questionmark
+				// key is pressed
+				help: true,
+
+				// Number of milliseconds between automatically proceeding to the
+				// next slide, disabled when set to 0, this value can be overwritten
+				// by using a data-autoslide attribute on your slides
+				autoSlide: 0,
+
+				// Stop auto-sliding after user input
+				autoSlideStoppable: true,
+
+				// Enable slide navigation via mouse wheel
+				mouseWheel: false,
+
+				// Hides the address bar on mobile devices
+				hideAddressBar: true,
+
+				// Opens links in an iframe preview overlay
+				previewLinks: false,
+
+				// Transition style
+				transition: 'slide', // default/none/fade/slide/convex/concave/zoom
+
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
+
+				// Transition style for full page slide backgrounds
+				backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+				// Number of slides away from the current that are visible
+				viewDistance: 3,
+
+				// Parallax background image
+				parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+				// Parallax background size
+				parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+				// Optional reveal.js plugins
+				dependencies: [
+				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+				// Interpret Markdown in <section> elements
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+				// Syntax highlight for <code> elements
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+				// Zoom in and out with Alt+click
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+
+				// Speaker notes
+				{ src: 'plugin/notes/notes.js', async: true },
+
+				// Remote control your reveal.js presentation using a touch device
+				{ src: 'plugin/remotes/remotes.js', async: true },
+
+				// MathJax
+				{ src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
